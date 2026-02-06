@@ -12,7 +12,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Top Level Plan for Sub 4 | Marathon Training</title>
+    <title>Strong Marathon Performance | Whitefish</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
         * {
@@ -93,6 +93,7 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
             letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
         .goal {
@@ -248,7 +249,7 @@
         }
         
         .week-card.collapsed .collapse-indicator {
-            transform: rotate(180deg);
+            transform: rotate(-90deg);
         }
 
         .week-title {
@@ -323,36 +324,6 @@
             z-index: 2;
         }
         
-        .checkbox-label {
-            font-size: 0.85rem;
-            color: #6b7280;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            z-index: 2;
-        }
-        
-        .day-row.completed .checkbox-label,
-        .day-row.missed .checkbox-label {
-            color: white;
-        }
-        
-        .miss-btn-label {
-            font-size: 0.85rem;
-            color: #6b7280;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            z-index: 2;
-        }
-        
-        .day-row.completed .miss-btn-label,
-        .day-row.missed .miss-btn-label {
-            color: white;
-        }
-        
         .day-row.completed {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
@@ -405,8 +376,35 @@
             color: white;
             box-shadow: 0 4px 12px rgba(92, 46, 31, 0.6);
         }
-            border-radius: 12px;
-            transition: all 0.2s ease;
+        
+        .checkbox-label {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            z-index: 2;
+        }
+        
+        .day-row.completed .checkbox-label,
+        .day-row.missed .checkbox-label {
+            color: white;
+        }
+        
+        .miss-btn-label {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            z-index: 2;
+        }
+        
+        .day-row.completed .miss-btn-label,
+        .day-row.missed .miss-btn-label {
+            color: white;
         }
 
         .day-row:hover {
@@ -637,6 +635,80 @@
         .note-display.visible {
             display: block;
         }
+        
+        /* Edit mode styles */
+        .edit-mode-btn {
+            background: transparent;
+            color: var(--text-light);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Space Mono', monospace;
+            margin-top: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .edit-mode-btn:hover {
+            background: var(--bg);
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .edit-mode-btn.active {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+        
+        body.edit-mode .workout-name,
+        body.edit-mode .workout-distance {
+            cursor: pointer;
+            position: relative;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        body.edit-mode .workout-name:hover,
+        body.edit-mode .workout-distance:hover {
+            background: rgba(102, 126, 234, 0.1);
+            outline: 2px dashed #667eea;
+        }
+        
+        body.edit-mode .workout-name::after,
+        body.edit-mode .workout-distance::after {
+            content: '✏️';
+            margin-left: 0.5rem;
+            font-size: 0.9em;
+        }
+        
+        .workout-name.editing,
+        .workout-distance.editing {
+            background: white;
+            outline: 3px solid #667eea;
+            padding: 0.5rem;
+        }
+        
+        .workout-name input,
+        .workout-distance input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font: inherit;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .workout-name input:focus,
+        .workout-distance input:focus {
+            outline: none;
+        }
 
         @media (max-width: 768px) {
             .day-row {
@@ -658,57 +730,57 @@
     <div class="container">
         <div class="header">
             <div class="header-content">
-                <h1>Top Level Plan for Sub 4</h1>
-                <div class="goal">Goal: Sub-4:00 (5:41/km pace)</div>
-                <div class="dates">Jan 26 → May 17, 2026 ⭐</div>
+                <h1>🏃‍♂️ Strong Marathon Performance 🏃‍♂️</h1>
+                <div class="goal">Training Plan for Whitefish Marathon</div>
+                <div class="dates">Race Day: May 16, 2026 | Let's Have Fun! 🎉</div>
             </div>
         </div>
 
         <div class="content">
 
-            <!-- PHASE 1: BASE & DURABILITY -->
+            <!-- PHASE 1: GETTING BACK THE FITNESS -->
             <div class="phase-section phase1">
                 <div class="phase-header">
-                    <div class="phase-icon">🟢</div>
-                    <h2 class="phase-title">Phase 1: Base & Durability</h2>
+                    <div class="phase-icon">🌱</div>
+                    <h2 class="phase-title">Phase 1: Getting Back The Fitness</h2>
                 </div>
 
                 <!-- Week 1 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 1 | Jan 26 – Feb 1</div>
-                        <div class="week-total">60–68 km</div>
+                        <div class="week-total">25-31 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
                             <div class="day-name">MON</div>
                             <div class="day-date">Jan 26</div>
-                            <div class="workout-name">Rest / Mobility 🧘</div>
+                            <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Jan 27</div>
-                            <div class="workout-name">Easy Run + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">5 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Jan 28</div>
-                            <div class="workout-name">Medium Easy 🏃</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Jan 29</div>
-                            <div class="workout-name">Easy / Optional 🍃</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Jan 30</div>
-                            <div class="workout-name">Steady Run 💨</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -720,51 +792,51 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Feb 1</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">16 km</div>
+                            <div class="workout-distance">14 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Build consistency, easy mileage, time on feet</div>
+                        <div class="focus-text">Ease back into running. Listen to your body and build a foundation.</div>
                     </div>
                 </div>
 
                 <!-- Week 2 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 2 | Feb 2 – Feb 8</div>
-                        <div class="week-total">62–70 km</div>
+                        <div class="week-total">28-34 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
                             <div class="day-name">MON</div>
                             <div class="day-date">Feb 2</div>
-                            <div class="workout-name">Rest / Mobility 🧘</div>
+                            <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Feb 3</div>
-                            <div class="workout-name">Easy Run + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">5 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Feb 4</div>
-                            <div class="workout-name">Medium Easy 🏃</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Feb 5</div>
-                            <div class="workout-name">Easy / Optional 🍃</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">7 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Feb 6</div>
-                            <div class="workout-name">Steady Run 💨</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -776,51 +848,51 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Feb 8</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">18 km</div>
+                            <div class="workout-distance">16 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Aerobic base development</div>
+                        <div class="focus-text">Building consistency. Keep it comfortable and enjoyable.</div>
                     </div>
                 </div>
 
                 <!-- Week 3 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 3 | Feb 9 – Feb 15</div>
-                        <div class="week-total">64–72 km</div>
+                        <div class="week-total">32-38 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
                             <div class="day-name">MON</div>
                             <div class="day-date">Feb 9</div>
-                            <div class="workout-name">Rest / Mobility 🧘</div>
+                            <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Feb 10</div>
-                            <div class="workout-name">Easy Run + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Feb 11</div>
-                            <div class="workout-name">Medium Easy 🏃</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Feb 12</div>
-                            <div class="workout-name">Easy / Optional 🍃</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Feb 13</div>
-                            <div class="workout-name">Steady Run 💨</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -832,51 +904,51 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Feb 15</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">20 km</div>
+                            <div class="workout-distance">18 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Consistency building, recovery emphasis</div>
+                        <div class="focus-text">Gradually building endurance. Feeling stronger each week!</div>
                     </div>
                 </div>
 
                 <!-- Week 4 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 4 | Feb 16 – Feb 22</div>
-                        <div class="week-total">66–74 km</div>
+                        <div class="week-total">34-42 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
                             <div class="day-name">MON</div>
                             <div class="day-date">Feb 16</div>
-                            <div class="workout-name">Rest / Mobility 🧘</div>
+                            <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Feb 17</div>
-                            <div class="workout-name">Easy Run + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Feb 18</div>
-                            <div class="workout-name">Medium Easy 🏃</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Feb 19</div>
-                            <div class="workout-name">Easy / Optional 🍃</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Feb 20</div>
-                            <div class="workout-name">Steady Run 💨</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -888,29 +960,28 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Feb 22</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">22 km</div>
+                            <div class="workout-distance">20 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Complete base phase strong</div>
+                        <div class="focus-text">Fitness is coming back! Ready to move into endurance building.</div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- PHASE 2: MARATHON BUILD -->
+            <!-- PHASE 2: COMFORTABLE ENDURANCE -->
             <div class="phase-section phase2">
                 <div class="phase-header">
-                    <div class="phase-icon">🟡</div>
-                    <h2 class="phase-title">Phase 2: Marathon Build</h2>
+                    <div class="phase-icon">💪</div>
+                    <h2 class="phase-title">Phase 2: Comfortable Endurance</h2>
                 </div>
 
                 <!-- Week 5 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 5 | Feb 23 – Mar 1</div>
-                        <div class="week-total">62–76 km</div>
+                        <div class="week-total">32-40 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -922,26 +993,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Feb 24</div>
-                            <div class="workout-name">3 × 4 km @ MP (2-3 min rest) 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Feb 25</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Feb 26</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Feb 27</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -952,21 +1023,21 @@
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">Mar 1</div>
-                            <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">22 km</div>
+                            <div class="workout-name">Long Run (cutback) 🏔️</div>
+                            <div class="workout-distance">18 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">First taste of marathon pace - build confidence running at goal pace in short segments</div>
+                        <div class="focus-text">Recovery week! Cutback to absorb training and stay fresh.</div>
                     </div>
                 </div>
 
                 <!-- Week 6 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 6 | Mar 2 – Mar 8</div>
-                        <div class="week-total">66–80 km</div>
+                        <div class="week-total">35-43 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -978,26 +1049,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Mar 3</div>
-                            <div class="workout-name">2 × 6 km @ MP (3-4 min rest) 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Mar 4</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Mar 5</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">9 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Mar 6</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1008,21 +1079,21 @@
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">Mar 8</div>
-                            <div class="workout-name">Long Run - Last 6-8 km @ MP 🔥</div>
-                            <div class="workout-distance">26 km</div>
+                            <div class="workout-name">Long Run 🏔️</div>
+                            <div class="workout-distance">22 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Extend MP segments and practice finishing long runs at goal pace</div>
+                        <div class="focus-text">Building endurance comfortably. You got this!</div>
                     </div>
                 </div>
 
                 <!-- Week 7 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 7 | Mar 9 – Mar 15</div>
-                        <div class="week-total">68–82 km</div>
+                        <div class="week-total">37-45 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1034,26 +1105,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Mar 10</div>
-                            <div class="workout-name">10-14 km Continuous @ MP 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Mar 11</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Mar 12</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">6km easy + 3km @ MP 🎯</div>
+                            <div class="workout-distance">9 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Mar 13</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1065,20 +1136,20 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Mar 15</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">28 km</div>
+                            <div class="workout-distance">24 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Build endurance at marathon pace - sustained tempo effort without breaks</div>
+                        <div class="focus-text">First taste of marathon pace work. Finding your rhythm!</div>
                     </div>
                 </div>
 
                 <!-- Week 8 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 8 | Mar 16 – Mar 22</div>
-                        <div class="week-total">70–84 km</div>
+                        <div class="week-total">40-48 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1090,26 +1161,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Mar 17</div>
-                            <div class="workout-name">3 × 4 km @ MP (2-3 min rest) 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Mar 18</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Mar 19</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">10 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Mar 20</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1120,30 +1191,29 @@
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">Mar 22</div>
-                            <div class="workout-name">Long Run - Last 6-8 km @ MP 🔥</div>
-                            <div class="workout-distance">30 km</div>
+                            <div class="workout-name">Long Run 🏔️</div>
+                            <div class="workout-distance">26 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Combine quality MP intervals with tired-legs MP practice on long run</div>
+                        <div class="focus-text">Longest run yet! Take it easy and enjoy the journey.</div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- PHASE 3: PEAK TRAINING -->
+            <!-- PHASE 3: PEAK BUT CHILL -->
             <div class="phase-section phase3">
                 <div class="phase-header">
                     <div class="phase-icon">🔥</div>
-                    <h2 class="phase-title">Phase 3: Peak Training</h2>
+                    <h2 class="phase-title">Phase 3: Peak but Chill</h2>
                 </div>
 
                 <!-- Week 9 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 9 | Mar 23 – Mar 29</div>
-                        <div class="week-total">68–80 km</div>
+                        <div class="week-total">28-36 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1155,26 +1225,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Mar 24</div>
-                            <div class="workout-name">2 × 6 km @ MP (3-4 min rest) 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">WED</div>
                             <div class="day-date">Mar 25</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–12 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Mar 26</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">8km w/ last 3km @ MP 🎯</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Mar 27</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1185,21 +1255,21 @@
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">Mar 29</div>
-                            <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">26 km</div>
+                            <div class="workout-name">Long Run (cutback) 🏔️</div>
+                            <div class="workout-distance">22 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Recovery week - maintain MP sharpness with lower volume, fully easy long run</div>
+                        <div class="focus-text">Recovery week before the big push. Stay relaxed!</div>
                     </div>
                 </div>
 
                 <!-- Week 10 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 10 | Mar 30 – Apr 5</div>
-                        <div class="week-total">68–82 km</div>
+                        <div class="week-total">42-50 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1211,26 +1281,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Mar 31</div>
-                            <div class="workout-name">10-14 km Continuous @ MP 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Apr 1</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–12 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Apr 2</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">10 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Apr 3</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1241,21 +1311,21 @@
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">Apr 5</div>
-                            <div class="workout-name">Long Run - Last 6-8 km @ MP 🔥</div>
+                            <div class="workout-name">Long Run 🏔️</div>
                             <div class="workout-distance">28 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Race-specific endurance - practice marathon pace on both quality day and long run</div>
+                        <div class="focus-text">Big mileage! You are getting marathon-strong!</div>
                     </div>
                 </div>
 
                 <!-- Week 11 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 11 | Apr 6 – Apr 12</div>
-                        <div class="week-total">72–82 km ⭐ PEAK</div>
+                        <div class="week-total">44-52 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1267,26 +1337,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Apr 7</div>
-                            <div class="workout-name">2 × 8 km @ MP (4-5 min rest) 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">WED</div>
                             <div class="day-date">Apr 8</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Easy (optional) 🍃</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Apr 9</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">14–16 km</div>
+                            <div class="workout-name">10km w/ 5km @ MP 🎯</div>
+                            <div class="workout-distance">10 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Apr 10</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1297,21 +1367,21 @@
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">Apr 12</div>
-                            <div class="workout-name">PEAK Long Run - Last 10 km @ MP 🔥 🔥</div>
-                            <div class="workout-distance">30–32 km</div>
+                            <div class="workout-name">Long Run 30km (PEAK!) 🔥🏔️</div>
+                            <div class="workout-distance">30 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">PEAK WEEK - prove you can handle marathon pace while fatigued, nail the long run</div>
+                        <div class="focus-text">PEAK WEEK! This is your marathon dress rehearsal. You're ready!</div>
                     </div>
                 </div>
 
                 <!-- Week 12 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 12 | Apr 13 – Apr 19</div>
-                        <div class="week-total">68–78 km</div>
+                        <div class="week-total">30-38 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1323,26 +1393,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Apr 14</div>
-                            <div class="workout-name">16 km Continuous @ MP 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">WED</div>
                             <div class="day-date">Apr 15</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Apr 16</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">14–16 km</div>
+                            <div class="workout-name">Steady 💨</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Apr 17</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1354,20 +1424,28 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Apr 19</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">26–28 km</div>
+                            <div class="workout-distance">24 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Longest continuous MP effort - build race-day confidence, easy recovery long run</div>
+                        <div class="focus-text">Recovery from peak. Starting to feel fresh again!</div>
                     </div>
+                </div>
+            </div>
+
+            <!-- PHASE 4: TAPER - GET READY TO RACE! -->
+            <div class="phase-section taper">
+                <div class="phase-header">
+                    <div class="phase-icon">✨</div>
+                    <h2 class="phase-title">Phase 4: Taper - Get Ready to Race!</h2>
                 </div>
 
                 <!-- Week 13 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
-                        <div class="week-title">Week 13 | Apr 20 – Apr 27</div>
-                        <div class="week-total">62–74 km</div>
+                        <div class="week-title">Week 13 | Apr 20 – Apr 26</div>
+                        <div class="week-total">26-32 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1379,26 +1457,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Apr 21</div>
-                            <div class="workout-name">2 × 8 km @ MP (4-5 min rest) 🎯</div>
-                            <div class="workout-distance">12–16 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">WED</div>
                             <div class="day-date">Apr 22</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row workout-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">Apr 23</div>
-                            <div class="workout-name">Medium Run 🏃‍♂️</div>
-                            <div class="workout-distance">14–16 km</div>
+                            <div class="workout-name">6km w/ 3km @ MP 🎯</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">Apr 24</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">8 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1410,54 +1488,45 @@
                             <div class="day-name">SUN</div>
                             <div class="day-date">Apr 26</div>
                             <div class="workout-name">Long Run 🏔️</div>
-                            <div class="workout-distance">26–28 km</div>
+                            <div class="workout-distance">20 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Final quality MP work, half marathon tune-up before taper begins</div>
+                        <div class="focus-text">Taper begins! Less volume, more freshness. Trust your training!</div>
                     </div>
                 </div>
 
-            </div>
-
-            <!-- TAPER PHASE -->
-            <div class="phase-section taper">
-                <div class="phase-header">
-                    <div class="phase-icon">🏁</div>
-                    <h2 class="phase-title">Taper Phase</h2>
-                </div>
-
                 <!-- Week 14 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 14 | Apr 27 – May 3</div>
-                        <div class="week-total">52–58 km</div>
+                        <div class="week-total">20-28 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
                             <div class="day-name">MON</div>
                             <div class="day-date">Apr 27</div>
-                            <div class="workout-name">Rest / Light Cross-Training 🏊</div>
+                            <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">Apr 28</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">6 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">WED</div>
                             <div class="day-date">Apr 29</div>
-                            <div class="workout-name">10-12 km, Last 5 km @ MP 🎯</div>
-                            <div class="workout-distance">10–12 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">THU</div>
                             <div class="day-date">Apr 30</div>
                             <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">5–6 km</div>
+                            <div class="workout-distance">8 km</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
@@ -1465,30 +1534,30 @@
                             <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
                             <div class="day-date">May 2</div>
-                            <div class="workout-name">Easy Recovery 🌿</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row long-run">
                             <div class="day-name">SUN</div>
                             <div class="day-date">May 3</div>
-                            <div class="workout-name">Long Run - Last 5 km @ MP 🔥</div>
-                            <div class="workout-distance">18–20 km</div>
+                            <div class="workout-name">Long Run 🏔️</div>
+                            <div class="workout-distance">14 km</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Recover from half marathon, maintain MP sharpness with light touches</div>
+                        <div class="focus-text">Feeling good! Energy is coming back. Race week is near!</div>
                     </div>
                 </div>
 
                 <!-- Week 15 -->
-                <div class="week-card ">
+                <div class="week-card collapsed">
                     <div class="week-header">
                         <div class="week-title">Week 15 | May 4 – May 10</div>
-                        <div class="week-total">40–46 km</div>
+                        <div class="week-total">9 km</div>
                     </div>
                     <div class="days-grid">
                         <div class="day-row rest-day">
@@ -1500,20 +1569,26 @@
                         <div class="day-row ">
                             <div class="day-name">TUE</div>
                             <div class="day-date">May 5</div>
-                            <div class="workout-name">Easy + Strides ⚡</div>
-                            <div class="workout-distance">6–8 km</div>
+                            <div class="workout-name">Easy 🌤️</div>
+                            <div class="workout-distance">5 km</div>
+                        </div>
+                        <div class="day-row rest-day">
+                            <div class="day-name">WED</div>
+                            <div class="day-date">May 6</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row ">
                             <div class="day-name">THU</div>
                             <div class="day-date">May 7</div>
-                            <div class="workout-name">8-10 km, 2 × 3 km @ MP (3 min rest) 🎯</div>
-                            <div class="workout-distance">8–10 km</div>
+                            <div class="workout-name">Easy Shakeout 🌤️</div>
+                            <div class="workout-distance">4 km</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">May 8</div>
-                            <div class="workout-name">Easy Recovery 🌿</div>
-                            <div class="workout-distance">5 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">SAT</div>
@@ -1521,98 +1596,98 @@
                             <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">SUN</div>
                             <div class="day-date">May 10</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">12–14 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                     </div>
                     <div class="week-focus">
                         <div class="focus-label">💡 Focus</div>
-                        <div class="focus-text">Final MP sharpener to keep legs feeling fast, trust your fitness</div>
+                        <div class="focus-text">Deep taper! Resting up for the big day. Save your energy!</div>
                     </div>
                 </div>
 
                 <!-- Week 16 -->
-                <div class="week-card race-week">
+                <div class="week-card collapsed">
                     <div class="week-header">
-                        <div class="week-title">⭐ RACE WEEK | May 11 – May 17 ⭐</div>
-                        <div class="week-total">SUB-3:35! 🎯</div>
+                        <div class="week-title">Week 16 | May 11 – May 17</div>
+                        <div class="week-total">42.2+ km</div>
                     </div>
                     <div class="days-grid">
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">MON</div>
                             <div class="day-date">May 11</div>
-                            <div class="workout-name">Easy Recovery 🌿</div>
-                            <div class="workout-distance">5–6 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">TUE</div>
                             <div class="day-date">May 12</div>
-                            <div class="workout-name">Easy 🌤️</div>
-                            <div class="workout-distance">5 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
-                        <div class="day-row ">
+                        <div class="day-row rest-day">
                             <div class="day-name">WED</div>
                             <div class="day-date">May 13</div>
-                            <div class="workout-name">6 km Shakeout, 2 km @ MP 🎯</div>
-                            <div class="workout-distance">6 km</div>
+                            <div class="workout-name">Rest 💤</div>
+                            <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">THU</div>
                             <div class="day-date">May 14</div>
-                            <div class="workout-name">Rest or 2–4 km Super Easy 😌</div>
+                            <div class="workout-name">Rest 💤</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row rest-day">
                             <div class="day-name">FRI</div>
                             <div class="day-date">May 15</div>
-                            <div class="workout-name">Rest (Light Stretching Only) 🧘‍♂️</div>
+                            <div class="workout-name">Rest & Prepare 🎒</div>
                             <div class="workout-distance">—</div>
                         </div>
                         <div class="day-row race-day">
                             <div class="day-name">SAT</div>
                             <div class="day-date">May 16</div>
-                            <div class="workout-name">🏁 RACE DAY 🏁</div>
+                            <div class="workout-name">MARATHON DAY! 🏔️🎉🏆</div>
                             <div class="workout-distance">42.2 km</div>
                         </div>
                         <div class="day-row celebration-day">
                             <div class="day-name">SUN</div>
                             <div class="day-date">May 17</div>
-                            <div class="workout-name">🎊 CELEBRATION DAY! 🥳🏆✨</div>
-                            <div class="workout-distance">You did it! 🌟</div>
+                            <div class="workout-name">CELEBRATION! 🎊🥳</div>
+                            <div class="workout-distance">—</div>
                         </div>
                     </div>
                     <div class="week-focus">
-                        <div class="focus-label">🎯 Race Strategy</div>
-                        <div class="focus-text">Stay calm, stay rested. Start controlled at 5:41/km, settle into rhythm, finish strong. You're ready! 💪</div>
+                        <div class="focus-label">💡 Focus</div>
+                        <div class="focus-text">RACE WEEK! You are prepared. Have fun in Whitefish! 🏔️</div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- SUMMARY -->
+            <!-- TRAINING SUMMARY -->
             <div class="summary">
                 <h3>📊 Training Summary</h3>
                 <div class="summary-grid">
                     <div class="summary-item">
                         <h4>Duration ⏱️</h4>
-                        <p>15 weeks + race week<br>Jan 26 – May 17, 2026</p>
+                        <p>16 weeks<br>Jan 26 – May 17, 2026</p>
                     </div>
                     <div class="summary-item">
                         <h4>Peak Mileage 📈</h4>
-                        <p>72–82 km<br>(Week 11: Apr 6–12)</p>
+                        <p>44-52 km<br>(Week 11: Apr 6–12)</p>
                     </div>
                     <div class="summary-item">
                         <h4>Longest Run 🏃</h4>
-                        <p>30–32 km with last 10 km @ MP<br>(Apr 12, 2026)</p>
+                        <p>30 km<br>Long Run 30km (PEAK!) 🔥🏔️<br>(Apr 12, 2026)</p>
                     </div>
                     <div class="summary-item">
-                        <h4>Goal Pace 🎯</h4>
-                        <p>5:41/km (9:09/mile)<br>Marathon: Sub-4:00 🏆</p>
+                        <h4>Goal 🎯</h4>
+                        <p>Finish Strong &<br>Have Fun in<br>Beautiful Whitefish! 🏔️🎉</p>
                     </div>
                 </div>
+                <button class="edit-mode-btn" id="editModeBtn">✏️ Edit Workouts</button>
             </div>
         </div>
     </div>
@@ -1626,6 +1701,13 @@
             weekCards.forEach((weekCard, weekIndex) => {
                 const weekHeader = weekCard.querySelector('.week-header');
                 const weekTitle = weekHeader.querySelector('.week-title');
+                
+                // Load saved collapsed state
+                const weekId = `week-${weekIndex}`;
+                const isCollapsed = localStorage.getItem(`collapsed-${weekId}`);
+                if (isCollapsed === 'false') {
+                    weekCard.classList.remove('collapsed');
+                }
                 
                 // Wrap week title and add compliance display and collapse indicator
                 const titleWrapper = document.createElement('div');
@@ -1641,9 +1723,11 @@
                 collapseIndicator.textContent = '▼';
                 weekHeader.appendChild(collapseIndicator);
                 
-                // Make header clickable for collapse
+                // Make header clickable for collapse and save state
                 weekHeader.addEventListener('click', function(e) {
                     weekCard.classList.toggle('collapsed');
+                    const isNowCollapsed = weekCard.classList.contains('collapsed');
+                    localStorage.setItem(`collapsed-${weekId}`, isNowCollapsed);
                 });
                 
                 const daysGrid = weekCard.querySelector('.days-grid');
@@ -1681,6 +1765,24 @@
                     
                     // Move day-row into workout-card
                     workoutCard.appendChild(dayRow);
+                    
+                    // Load saved workout data if exists
+                    const savedWorkoutName = localStorage.getItem(`workout-name-${dayId}`);
+                    const savedWorkoutDistance = localStorage.getItem(`workout-distance-${dayId}`);
+                    
+                    const workoutNameEl = dayRow.querySelector('.workout-name');
+                    const workoutDistanceEl = dayRow.querySelector('.workout-distance');
+                    
+                    if (savedWorkoutName) {
+                        workoutNameEl.textContent = savedWorkoutName;
+                    }
+                    if (savedWorkoutDistance) {
+                        workoutDistanceEl.textContent = savedWorkoutDistance;
+                    }
+                    
+                    // Store original values as data attributes
+                    workoutNameEl.dataset.id = dayId;
+                    workoutDistanceEl.dataset.id = dayId;
                     
                     // Create completion checkbox
                     const checkbox = document.createElement('input');
@@ -1786,6 +1888,215 @@
                     complianceDisplay.classList.add('average');
                 } else {
                     complianceDisplay.classList.add('poor');
+                }
+            }
+        }
+        
+        // Calculate weekly km total
+        function calculateWeeklyTotal(weekCard) {
+            const distanceElements = weekCard.querySelectorAll('.workout-distance');
+            let minTotal = 0;
+            let maxTotal = 0;
+            
+            distanceElements.forEach(el => {
+                const text = el.textContent.trim();
+                
+                // Skip rest days
+                if (text === '—' || text === '') return;
+                
+                // Extract numbers from text like "10-12 km" or "5 km"
+                const numbers = text.match(/(\d+(?:\.\d+)?)/g);
+                
+                if (numbers && numbers.length > 0) {
+                    if (numbers.length === 1) {
+                        // Single value like "5 km"
+                        const val = parseFloat(numbers[0]);
+                        minTotal += val;
+                        maxTotal += val;
+                    } else if (numbers.length >= 2) {
+                        // Range like "10-12 km"
+                        minTotal += parseFloat(numbers[0]);
+                        maxTotal += parseFloat(numbers[1]);
+                    }
+                }
+            });
+            
+            // Update the week total display
+            const weekTotalEl = weekCard.querySelector('.week-total');
+            if (weekTotalEl) {
+                if (minTotal === maxTotal) {
+                    weekTotalEl.textContent = `${minTotal} km`;
+                } else {
+                    weekTotalEl.textContent = `${minTotal}-${maxTotal} km`;
+                }
+            }
+        }
+        
+        // Update all weekly totals
+        function updateAllWeeklyTotals() {
+            document.querySelectorAll('.week-card').forEach(weekCard => {
+                calculateWeeklyTotal(weekCard);
+            });
+        }
+        
+        // Find peak mileage week
+        function findPeakMileage() {
+            let peakMin = 0;
+            let peakMax = 0;
+            let peakWeekInfo = '';
+            
+            document.querySelectorAll('.week-card').forEach(weekCard => {
+                const distanceElements = weekCard.querySelectorAll('.workout-distance');
+                let minTotal = 0;
+                let maxTotal = 0;
+                
+                distanceElements.forEach(el => {
+                    const text = el.textContent.trim();
+                    if (text === '—' || text === '') return;
+                    
+                    const numbers = text.match(/(\d+(?:\.\d+)?)/g);
+                    if (numbers && numbers.length > 0) {
+                        if (numbers.length === 1) {
+                            const val = parseFloat(numbers[0]);
+                            minTotal += val;
+                            maxTotal += val;
+                        } else if (numbers.length >= 2) {
+                            minTotal += parseFloat(numbers[0]);
+                            maxTotal += parseFloat(numbers[1]);
+                        }
+                    }
+                });
+                
+                // Check if this week has higher max (or if tied, higher min)
+                if (maxTotal > peakMax || (maxTotal === peakMax && minTotal > peakMin)) {
+                    peakMin = minTotal;
+                    peakMax = maxTotal;
+                    const weekTitleEl = weekCard.querySelector('.week-title');
+                    if (weekTitleEl) {
+                        // Get full week info like "Week 11 | Apr 6 – Apr 12"
+                        const fullTitle = weekTitleEl.textContent.trim();
+                        // Extract week number and dates
+                        const match = fullTitle.match(/(Week \d+)\s*\|\s*(.+)/);
+                        if (match) {
+                            const weekNum = match[1]; // "Week 11"
+                            const dates = match[2].trim(); // "Apr 6 – Apr 12"
+                            peakWeekInfo = `${weekNum}: ${dates}`;
+                        } else {
+                            peakWeekInfo = fullTitle;
+                        }
+                    }
+                }
+            });
+            
+            return { min: peakMin, max: peakMax, weekInfo: peakWeekInfo };
+        }
+        
+        // Find longest run
+        function findLongestRun() {
+            let longestMin = 0;
+            let longestMax = 0;
+            let longestDate = '';
+            
+            document.querySelectorAll('.day-row.long-run').forEach(dayRow => {
+                const distanceEl = dayRow.querySelector('.workout-distance');
+                const dateEl = dayRow.querySelector('.day-date');
+                
+                if (!distanceEl) return;
+                
+                const text = distanceEl.textContent.trim();
+                if (text === '—' || text === '') return;
+                
+                const numbers = text.match(/(\d+(?:\.\d+)?)/g);
+                if (numbers && numbers.length > 0) {
+                    let min, max;
+                    if (numbers.length === 1) {
+                        min = max = parseFloat(numbers[0]);
+                    } else {
+                        min = parseFloat(numbers[0]);
+                        max = parseFloat(numbers[1]);
+                    }
+                    
+                    // Check if this is the longest (compare max values)
+                    if (max > longestMax || (max === longestMax && min > longestMin)) {
+                        longestMin = min;
+                        longestMax = max;
+                        if (dateEl) {
+                            longestDate = dateEl.textContent;
+                        }
+                        
+                        // Try to get the year from the week card
+                        const weekCard = dayRow.closest('.week-card');
+                        if (weekCard) {
+                            const weekTitle = weekCard.querySelector('.week-title');
+                            if (weekTitle) {
+                                const titleText = weekTitle.textContent;
+                                // Extract year from title like "Week 11 | Apr 6 – Apr 12"
+                                const yearMatch = titleText.match(/\d{4}/);
+                                if (yearMatch && !longestDate.includes(yearMatch[0])) {
+                                    longestDate += `, ${yearMatch[0]}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            return { min: longestMin, max: longestMax, date: longestDate };
+        }
+        
+        // Update training summary
+        function updateTrainingSummary() {
+            // Update peak mileage
+            const peakData = findPeakMileage();
+            const peakMileageEl = document.querySelector('.summary-item:nth-child(2) p');
+            if (peakMileageEl && peakData.max > 0) {
+                let peakText;
+                if (peakData.min === peakData.max) {
+                    peakText = `${peakData.max} km`;
+                } else {
+                    peakText = `${peakData.min}–${peakData.max} km`;
+                }
+                if (peakData.weekInfo) {
+                    peakMileageEl.innerHTML = `${peakText}<br>(${peakData.weekInfo})`;
+                } else {
+                    peakMileageEl.textContent = peakText;
+                }
+            }
+            
+            // Update longest run
+            const longestData = findLongestRun();
+            const longestRunEl = document.querySelector('.summary-item:nth-child(3) p');
+            if (longestRunEl && longestData.max > 0) {
+                let distanceText;
+                if (longestData.min === longestData.max) {
+                    distanceText = `${longestData.max} km`;
+                } else {
+                    distanceText = `${longestData.min}–${longestData.max} km`;
+                }
+                
+                // Get full workout description
+                const longestRunRow = Array.from(document.querySelectorAll('.day-row.long-run')).find(row => {
+                    const distEl = row.querySelector('.workout-distance');
+                    if (!distEl) return false;
+                    const text = distEl.textContent.trim();
+                    const numbers = text.match(/(\d+(?:\.\d+)?)/g);
+                    if (!numbers) return false;
+                    const max = numbers.length > 1 ? parseFloat(numbers[1]) : parseFloat(numbers[0]);
+                    return max === longestData.max;
+                });
+                
+                let workoutName = '';
+                if (longestRunRow) {
+                    const workoutNameEl = longestRunRow.querySelector('.workout-name');
+                    if (workoutNameEl) {
+                        workoutName = workoutNameEl.textContent.trim();
+                    }
+                }
+                
+                if (longestData.date) {
+                    longestRunEl.innerHTML = `${distanceText}<br>${workoutName}<br>(${longestData.date})`;
+                } else {
+                    longestRunEl.innerHTML = `${distanceText}<br>${workoutName}`;
                 }
             }
         }
@@ -1970,7 +2281,86 @@
                 checkWeekCompliance(index + 1);
             });
             
+            // Calculate initial weekly totals
+            updateAllWeeklyTotals();
+            
+            // Update training summary
+            updateTrainingSummary();
+            
             console.log('Tracker initialized!');
+        }
+        
+        // Edit mode functionality
+        function initializeEditMode() {
+            const editBtn = document.getElementById('editModeBtn');
+            let editMode = false;
+            
+            editBtn.addEventListener('click', function() {
+                editMode = !editMode;
+                document.body.classList.toggle('edit-mode', editMode);
+                
+                if (editMode) {
+                    editBtn.textContent = '✅ Done Editing';
+                    editBtn.classList.add('active');
+                } else {
+                    editBtn.textContent = '✏️ Edit Workouts';
+                    editBtn.classList.remove('active');
+                }
+            });
+            
+            // Make workout names and distances editable
+            document.addEventListener('click', function(e) {
+                if (!editMode) return;
+                
+                const target = e.target;
+                if (!target.classList.contains('workout-name') && !target.classList.contains('workout-distance')) return;
+                if (target.classList.contains('editing')) return;
+                
+                const originalText = target.textContent;
+                const dayId = target.dataset.id;
+                const isName = target.classList.contains('workout-name');
+                const storageKey = isName ? `workout-name-${dayId}` : `workout-distance-${dayId}`;
+                
+                target.classList.add('editing');
+                
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = originalText;
+                
+                target.textContent = '';
+                target.appendChild(input);
+                input.focus();
+                input.select();
+                
+                function finishEdit() {
+                    const newValue = input.value.trim() || originalText;
+                    target.textContent = newValue;
+                    target.classList.remove('editing');
+                    
+                    // Save to localStorage
+                    localStorage.setItem(storageKey, newValue);
+                    
+                    // Update weekly total if distance was changed
+                    if (!isName) {
+                        const weekCard = target.closest('.week-card');
+                        if (weekCard) {
+                            calculateWeeklyTotal(weekCard);
+                        }
+                        // Update training summary (peak mileage and longest run)
+                        updateTrainingSummary();
+                    }
+                }
+                
+                input.addEventListener('blur', finishEdit);
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        finishEdit();
+                    } else if (e.key === 'Escape') {
+                        target.textContent = originalText;
+                        target.classList.remove('editing');
+                    }
+                });
+            });
         }
         
         // Initialize everything when DOM is ready
@@ -1978,10 +2368,12 @@
             document.addEventListener('DOMContentLoaded', function() {
                 initializeInteractiveElements();
                 setTimeout(initializeTracker, 100);
+                initializeEditMode();
             });
         } else {
             initializeInteractiveElements();
             setTimeout(initializeTracker, 100);
+            initializeEditMode();
         }
     </script>
 </body>
